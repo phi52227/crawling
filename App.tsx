@@ -7,6 +7,7 @@ import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import MainMenu from './screens/MainMenu';
 import News from './screens/News';
 import ArticleList from './screens/ArticleList';
+import ArticleDetailPage from './screens/ArticleDetailPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ type RootStackParamList = {
   MainMenu: undefined;
   News: undefined;
   ArticleList: {section: Number} | undefined;
+  ArticleDetailPage: {article: any; index: number};
 };
 
 export type mainMenuProps = NativeStackScreenProps<
@@ -28,6 +30,11 @@ export type articleListProps = NativeStackScreenProps<
   'ArticleList'
 >;
 
+export type articleDetailPageProps = NativeStackScreenProps<
+  RootStackParamList,
+  'ArticleDetailPage'
+>;
+
 function App() {
   return (
     <NavigationContainer>
@@ -39,6 +46,7 @@ function App() {
         <Stack.Screen name="MainMenu" component={MainMenu} />
         <Stack.Screen name="News" component={News} />
         <Stack.Screen name="ArticleList" component={ArticleList} />
+        <Stack.Screen name="ArticleDetailPage" component={ArticleDetailPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

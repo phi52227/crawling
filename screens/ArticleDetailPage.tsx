@@ -21,11 +21,16 @@ const ArticleDetailPage = ({navigation, route}: articleDetailPageProps) => {
   const index: number = params?.index;
 
   const [articleIndex, setArticleIndex] = useState(index);
-
+  console.log(article[articleIndex].content);
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Text style={styles.titleText}>{article[articleIndex].title}</Text>
+        {/* <Text style={styles.titleText}>{article[articleIndex].title}</Text> */}
+        <View style={styles.longTextView}>
+          {article[articleIndex].title.split(' ').map(text => {
+            return <Text style={styles.titleText}>{text + ' '}</Text>;
+          })}
+        </View>
         <Text style={styles.dateText}>
           {article[articleIndex].posting_date}
         </Text>
@@ -33,6 +38,11 @@ const ArticleDetailPage = ({navigation, route}: articleDetailPageProps) => {
           <Text style={styles.contentText}>
             {article[articleIndex].content}
           </Text>
+          {/* <View style={styles.longTextView}>
+            {article[articleIndex].content.split(' ').map(text => {
+              return <Text style={styles.contentText}>{text + ' '}</Text>;
+            })}
+          </View> */}
         </ScrollView>
       </View>
       <TouchableOpacity
@@ -88,21 +98,21 @@ const styles = StyleSheet.create({
     borderBottomColor: 'white',
   },
   titleText: {
-    fontSize: 17,
+    fontSize: 20,
     textAlign: 'left',
     fontWeight: '700',
     color: 'white',
     flexShrink: 0,
   },
   dateText: {
-    fontSize: 13,
+    fontSize: 15,
     textAlign: 'right',
     fontWeight: '500',
     color: 'white',
     marginTop: 10,
   },
   contentText: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: '500',
     color: 'white',
   },
@@ -120,6 +130,7 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+  longTextView: {flexDirection: 'row', flexWrap: 'wrap'},
 });
 
 export default ArticleDetailPage;

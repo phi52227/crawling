@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 type RootStackParamList = {
   MainMenu: undefined;
   News: undefined;
-  ArticleList: {section: Number} | undefined;
+  ArticleList: {section: string} | undefined;
   ArticleDetailPage: {article: any; index: number};
 };
 

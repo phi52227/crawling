@@ -4,16 +4,16 @@ import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import {newsProps} from '../App';
 
 const fieldList = [
-  {title: '정치', section: 100},
-  {title: '경제', section: 101},
-  {title: '사회', section: 102},
-  {title: '생활/문화', section: 103},
-  {title: 'IT/과학', section: 105},
+  {title: '정치', section: '1'},
+  {title: '경제', section: '2'},
+  {title: '사회', section: '3'},
+  {title: '생활/문화', section: '4'},
+  {title: 'IT/과학', section: '5'},
 ];
 
 const fieldBtn = (
   title: String,
-  section: Number,
+  section: string,
   index: React.Key,
   navigate: Function,
 ) => {

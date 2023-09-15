@@ -36,8 +36,12 @@ const makeArticleList = (
       }}>
       {/* <Text style={styles.titleText}>{article.title}</Text> */}
       <View style={styles.longTextView}>
-        {article.title.split(' ').map(text => {
-          return <Text style={styles.titleText}>{text + ' '}</Text>;
+        {article.title.split(' ').map((text, index) => {
+          return (
+            <Text style={styles.titleText} key={index}>
+              {text + ' '}
+            </Text>
+          );
         })}
       </View>
       <Text style={styles.dateText}>{article.posting_date}</Text>
@@ -57,7 +61,7 @@ const ArticleList = ({navigation, route}: articleListProps) => {
       console.log('try get api' + section);
       try {
         const response = await axios.get(
-          'http://20.200.218.143:8000/api/news/' + section,
+          'http://20.196.205.104:8000/api/news/' + section,
         );
         console.log(response.data);
         setArticleList(response.data);

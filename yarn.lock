@@ -6304,7 +6304,12 @@ react-native-screens@^3.25.0, "react-native-screens@>= 3.0.0":
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
-react-native@*, react-native@0.71.7:
+react-native-wrapped-text@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/react-native-wrapped-text/-/react-native-wrapped-text-1.2.2.tgz"
+  integrity sha512-CglzV4GvGfbMV25W/g8DWKbcQfgOS1qG3CXkcZSMF10jKUf4GgSyf3slAeAbMaw6z96u092PeJaZhfkvQtMfyQ==
+
+react-native@*, react-native@>=0.54, react-native@0.71.7:
   version "0.71.7"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.71.7.tgz"
   integrity sha512-Id6iRLS581fJMFGbBl1jP5uSmjExtGOvw5Gvh7694zISXjsRAsFMmU+izs0pyCLqDBoHK7y4BT7WGPGw693nYw==

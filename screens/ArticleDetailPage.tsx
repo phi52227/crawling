@@ -21,28 +21,37 @@ const ArticleDetailPage = ({navigation, route}: articleDetailPageProps) => {
   const index: number = params?.index;
 
   const [articleIndex, setArticleIndex] = useState(index);
+  console.log(article[articleIndex]);
   console.log(article[articleIndex].content);
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
         {/* <Text style={styles.titleText}>{article[articleIndex].title}</Text> */}
         <View style={styles.longTextView}>
-          {article[articleIndex].title.split(' ').map(text => {
-            return <Text style={styles.titleText}>{text + ' '}</Text>;
+          {article[articleIndex].title.split(' ').map((text, index) => {
+            return (
+              <Text style={styles.titleText} key={`${text}-${index}`}>
+                {text}{' '}
+              </Text>
+            );
           })}
         </View>
         <Text style={styles.dateText}>
           {article[articleIndex].posting_date}
         </Text>
         <ScrollView style={styles.scrollView}>
-          <Text style={styles.contentText}>
+          {/* <Text style={styles.contentText}>
             {article[articleIndex].content}
-          </Text>
-          {/* <View style={styles.longTextView}>
-            {article[articleIndex].content.split(' ').map(text => {
-              return <Text style={styles.contentText}>{text + ' '}</Text>;
+          </Text> */}
+          <View style={styles.longTextView}>
+            {article[articleIndex].content.split(' ').map((text, index) => {
+              return (
+                <Text style={styles.contentText} key={index}>
+                  {text + ' '}
+                </Text>
+              );
             })}
-          </View> */}
+          </View>
         </ScrollView>
       </View>
       <TouchableOpacity
@@ -102,7 +111,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: '700',
     color: 'white',
-    flexShrink: 0,
+    // flexShrink: 0,
   },
   dateText: {
     fontSize: 15,
@@ -130,7 +139,7 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
-  longTextView: {flexDirection: 'row', flexWrap: 'wrap'},
+  longTextView: {flexDirection: 'row', flexWrap: 'wrap', display: 'flex'},
 });
 
 export default ArticleDetailPage;

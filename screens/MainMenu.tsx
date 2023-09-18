@@ -22,15 +22,12 @@ import {mainMenuProps} from '../App';
 // } from 'react-native/Libraries/NewAppScreen';
 
 const menuList = [
-  {title: '유튜브', screen: 'Youtube'},
-  {title: '뉴스', screen: 'News'},
-  {title: '메모', screen: 'Memo'},
-  {title: '음성메모', screen: 'VoiceRecord'},
-  {title: '라디오', screen: 'Radio'},
-  {title: '도서/교육', screen: 'BookEdu'},
-  {title: '엔터테인먼트', screen: 'Entertainment'},
-  {title: '시각장애인 커뮤니티', screen: 'Community'},
-  {title: '공지사항', screen: 'Notice'},
+  {title: '네이버뉴스', screen: 'NaverNews'},
+  {title: '동아일보', screen: 'DongaIlbo'},
+  {title: '국민일보', screen: 'KukminIlbo'},
+  {title: 'YTN', screen: 'YtnNews'},
+  {title: '연합뉴스', screen: 'YonhapNews'},
+  {title: '중앙일보', screen: 'JoongangIlbo'},
 ];
 
 const MenuBtn = (

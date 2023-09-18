@@ -1,14 +1,16 @@
 import React from 'react';
 import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 
-import {newsProps} from '../App';
+import {dongaIlboProps} from '../App';
 
 const fieldList = [
   {title: '정치', section: '1'},
   {title: '경제', section: '2'},
   {title: '사회', section: '3'},
-  {title: '생활/문화', section: '4'},
-  {title: 'IT/과학', section: '5'},
+  {title: '문화', section: '4'},
+  {title: '국제', section: '5'},
+  {title: '연예', section: '6'},
+  {title: '스포츠', section: '7'},
 ];
 
 const fieldBtn = (
@@ -27,7 +29,7 @@ const fieldBtn = (
   );
 };
 
-const News = ({navigation}: newsProps) => {
+const DongaIlbo = ({navigation}: dongaIlboProps) => {
   return (
     <View style={styles.container}>
       {fieldList.map((element, index) =>
@@ -61,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default News;
+export default DongaIlbo;

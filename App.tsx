@@ -24,7 +24,7 @@ type RootStackParamList = {
   KukminIlbo: undefined;
   YonhapNews: undefined;
   YtnNews: undefined;
-  ArticleList: {section: string} | undefined;
+  ArticleList: {newsCompany: string; section: string} | undefined;
   ArticleDetailPage: {article: any; index: number};
 };
 

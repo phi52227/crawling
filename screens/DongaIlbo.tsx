@@ -1,5 +1,11 @@
 import React from 'react';
-import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 
 import {dongaIlboProps} from '../App';
 
@@ -23,7 +29,9 @@ const fieldBtn = (
     <TouchableOpacity
       style={styles.button}
       key={index}
-      onPress={() => navigate('ArticleList', {section: section})}>
+      onPress={() =>
+        navigate('ArticleList', {newsCompany: 'donga', section: section})
+      }>
       <Text style={styles.menuText}>{title}</Text>
     </TouchableOpacity>
   );
@@ -31,11 +39,13 @@ const fieldBtn = (
 
 const DongaIlbo = ({navigation}: dongaIlboProps) => {
   return (
-    <View style={styles.container}>
-      {fieldList.map((element, index) =>
-        fieldBtn(element.title, element.section, index, navigation.navigate),
-      )}
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        {fieldList.map((element, index) =>
+          fieldBtn(element.title, element.section, index, navigation.navigate),
+        )}
+      </View>
+    </ScrollView>
   );
 };
 

@@ -21,7 +21,9 @@ const fieldBtn = (
     <TouchableOpacity
       style={styles.button}
       key={index}
-      onPress={() => navigate('ArticleList', {section: section})}>
+      onPress={() =>
+        navigate('ArticleList', {newsCompany: 'naver', section: section})
+      }>
       <Text style={styles.menuText}>{title}</Text>
     </TouchableOpacity>
   );

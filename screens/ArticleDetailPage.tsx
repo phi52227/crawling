@@ -15,14 +15,23 @@ interface Article {
   content: string;
 }
 
+const printLine = line => {
+  line.split(' ').map((text, index) => {
+    return (
+      <Text style={styles.contentText} key={text + index}>
+        {text}
+      </Text>
+    );
+  });
+};
+
 const ArticleDetailPage = ({navigation, route}: articleDetailPageProps) => {
   const {params} = route;
   const article: any = params?.article;
   const index: number = params?.index;
 
   const [articleIndex, setArticleIndex] = useState(index);
-  console.log(article[articleIndex]);
-  console.log(article[articleIndex].content);
+  const articleContent = article[articleIndex].content.split('\n');
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
@@ -40,10 +49,10 @@ const ArticleDetailPage = ({navigation, route}: articleDetailPageProps) => {
           {article[articleIndex].posting_date}
         </Text>
         <ScrollView style={styles.scrollView}>
-          {/* <Text style={styles.contentText}>
+          <Text style={styles.contentText}>
             {article[articleIndex].content}
-          </Text> */}
-          <View style={styles.longTextView}>
+          </Text>
+          {/* <View style={styles.longTextView}>
             {article[articleIndex].content.split(' ').map((text, index) => {
               return (
                 <Text style={styles.contentText} key={index}>
@@ -51,7 +60,7 @@ const ArticleDetailPage = ({navigation, route}: articleDetailPageProps) => {
                 </Text>
               );
             })}
-          </View>
+          </View> */}
         </ScrollView>
       </View>
       <TouchableOpacity

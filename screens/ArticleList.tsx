@@ -55,13 +55,20 @@ const ArticleList = ({navigation, route}: articleListProps) => {
 
   const {params} = route;
   const section: string | undefined = params?.section;
+  const nesCompany: string | undefined = params?.newsCompany;
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log('try get api' + section);
+      console.log(
+        'try get api : ' +
+          'http://20.196.205.104:8000/api/news/' +
+          nesCompany +
+          '/' +
+          section,
+      );
       try {
         const response = await axios.get(
-          'http://20.196.205.104:8000/api/news/' + section,
+          'http://20.196.205.104:8000/api/news/' + nesCompany + '/' + section,
         );
         console.log(response.data);
         setArticleList(response.data);

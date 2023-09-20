@@ -4,11 +4,11 @@ import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import {naverNewsProps} from '../App';
 
 const fieldList = [
-  {title: '정치', section: '1'},
-  {title: '경제', section: '2'},
-  {title: '사회', section: '3'},
-  {title: '생활/문화', section: '4'},
-  {title: 'IT/과학', section: '5'},
+  {title: '정치', section: 'politics'},
+  {title: '경제', section: 'economy'},
+  {title: '사회', section: 'society'},
+  {title: '생활/문화', section: 'lifeculture'},
+  {title: 'IT/과학', section: 'itscience'},
 ];
 
 const fieldBtn = (

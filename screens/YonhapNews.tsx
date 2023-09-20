@@ -4,11 +4,14 @@ import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import {yonhapNewsProps} from '../App';
 
 const fieldList = [
-  {title: '정치', section: '1'},
-  {title: '경제', section: '2'},
-  {title: '사회', section: '3'},
-  {title: '생활/문화', section: '4'},
-  {title: 'IT/과학', section: '5'},
+  {title: '정치', section: 'politics'},
+  {title: '경제', section: 'economy'},
+  {title: '사회', section: 'society'},
+  {title: '문화', section: 'culture'},
+  {title: '국제', section: 'international'},
+  {title: '연예', section: 'entertainments'},
+  {title: '스포츠', section: 'sports'},
+  {title: '북한', section: 'northkorea'},
 ];
 
 const fieldBtn = (
@@ -21,7 +24,9 @@ const fieldBtn = (
     <TouchableOpacity
       style={styles.button}
       key={index}
-      onPress={() => navigate('ArticleList', {section: section})}>
+      onPress={() =>
+        navigate('ArticleList', {newsCompany: 'yonhap', section: section})
+      }>
       <Text style={styles.menuText}>{title}</Text>
     </TouchableOpacity>
   );

@@ -10,13 +10,13 @@ import {
 import {dongaIlboProps} from '../App';
 
 const fieldList = [
-  {title: '정치', section: '1'},
-  {title: '경제', section: '2'},
-  {title: '사회', section: '3'},
-  {title: '문화', section: '4'},
-  {title: '국제', section: '5'},
-  {title: '연예', section: '6'},
-  {title: '스포츠', section: '7'},
+  {title: '정치', section: 'politics'},
+  {title: '경제', section: 'economy'},
+  {title: '사회', section: 'society'},
+  {title: '문화', section: 'culture'},
+  {title: '국제', section: 'international'},
+  {title: '연예', section: 'entertainments'},
+  {title: '스포츠', section: 'sports'},
 ];
 
 const fieldBtn = (
